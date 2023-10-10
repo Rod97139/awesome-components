@@ -13,4 +13,7 @@ export class CommentsComponent {
   constructor() {
   }
 
+  onLeaveComment() {
+
+  }
 }
