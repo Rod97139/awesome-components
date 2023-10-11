@@ -10,4 +10,7 @@ export class PostListItemComponent {
 
   @Input() post!: Post;
 
+  onNewComment(comment: string) {
+    console.log(comment);
+  }
 }

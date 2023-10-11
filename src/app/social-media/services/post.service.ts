@@ -6,7 +6,7 @@ import {environment} from "../../../environments/environment.development";
 
 @Injectable()
 export class PostService {
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${environment.apiUrl}/posts`);

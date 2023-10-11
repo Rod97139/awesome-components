@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PostListComponent implements OnInit{
 
+
   posts$!: Observable<Post[]>;
 
   constructor(private route: ActivatedRoute) { }
@@ -19,5 +20,4 @@ export class PostListComponent implements OnInit{
       map((data) => data['posts'])
     );
   }
-
 }

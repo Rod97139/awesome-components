@@ -9,4 +9,5 @@ export class Post {
   content!: string
   imageUrl!: string
   comments!: Comment[]
+
 }
