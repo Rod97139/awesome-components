@@ -1,14 +1,16 @@
-import {AfterViewInit, Directive, ElementRef, Renderer2} from "@angular/core";
+import {AfterViewInit, Directive, ElementRef, Input, Renderer2} from "@angular/core";
 
 @Directive({
   selector: '[highlight]'
 })
-export class HighlightDirective implements AfterViewInit{
+export class HighlightDirective implements AfterViewInit {
+
+  @Input() color = 'yellow';
     constructor(private elementRef: ElementRef,
                 private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    this.setBackgroundColor('yellow');
+    this.setBackgroundColor(this.color);
   }
 
   setBackgroundColor(color: string) {
