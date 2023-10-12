@@ -1,13 +1,35 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Comment} from "../../../core/models/comment.model";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
-import {animate, group, query, sequence, state, style, transition, trigger} from "@angular/animations";
+import {
+  animate,
+  animateChild,
+  group,
+  query,
+  sequence,
+  stagger,
+  state,
+  style,
+  transition,
+  trigger, useAnimation
+} from "@angular/animations";
+import {flashAnimation} from "../../animations/flash.animation";
+import {slideAndFadeAnimation} from "../../animations/slide-and-fade.animation";
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss'],
   animations: [
+    trigger('list', [
+      transition(':enter', [
+        query('@listItem', [
+          stagger(200, [
+            animateChild()
+          ])
+        ])
+      ]),
+    ]),
     trigger('listItem', [
       state('default', style({
         transform: 'scale(1)',
@@ -31,25 +53,19 @@ import {animate, group, query, sequence, state, style, transition, trigger} from
             opacity: 0
           }),
         ]),
-        style({
-          transform: 'translateX(-100%)',
-          opacity: 0,
-          backgroundColor: 'rgb(201, 157, 242)'
+        useAnimation(slideAndFadeAnimation, {
+          params: {
+            time: '1000ms',
+            startColor: 'rgb(201, 157, 242)'
+          }
         }),
-        animate('250ms ease-out', style({
-          transform: 'translateX(0)',
-          opacity: 1,
-          backgroundColor: 'white'
-        })),
         group([
-          // sequence([
-          //   animate('250ms', style({
-          //     backgroundColor: 'rgb(255, 7, 147)'
-          //   })),
-          //   animate('250ms', style({
-          //     backgroundColor: 'white'
-          //   }))
-          // ]),
+          useAnimation(flashAnimation, {
+            params: {
+              time: '1000ms',
+              flashColor: 'rgb(205,98,17)'
+            }
+          }),
           query('.comment-text', [
           animate('250ms', style({
             opacity: 1
