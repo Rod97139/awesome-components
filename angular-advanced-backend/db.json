@@ -192,6 +192,24 @@
         "confirmPassword": "moihsdgf"
       },
       "id": 4
+    },
+    {
+      "personalInfo": {
+        "firstName": "Rodolphe",
+        "lastName": "Mingo"
+      },
+      "contactPreference": "email",
+      "email": {
+        "email": "fayaflame@gmail.com",
+        "confirm": "fayaflame@gmail.com"
+      },
+      "phone": "",
+      "loginInfo": {
+        "username": "test",
+        "password": "azertyui",
+        "confirmPassword": "resetForm"
+      },
+      "id": 5
     }
   ],
   "candidates": [
