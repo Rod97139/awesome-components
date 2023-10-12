@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Comment} from "../../../core/models/comment.model";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import {animate, group, query, sequence, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-comments',
@@ -26,6 +26,11 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
         animate('500ms ease-in-out')
       ]),
       transition('void => *', [
+        query('.comment-text, .comment-date', [
+          style({
+            opacity: 0
+          }),
+        ]),
         style({
           transform: 'translateX(-100%)',
           opacity: 0,
@@ -35,7 +40,27 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
           transform: 'translateX(0)',
           opacity: 1,
           backgroundColor: 'white'
-        }))
+        })),
+        group([
+          // sequence([
+          //   animate('250ms', style({
+          //     backgroundColor: 'rgb(255, 7, 147)'
+          //   })),
+          //   animate('250ms', style({
+          //     backgroundColor: 'white'
+          //   }))
+          // ]),
+          query('.comment-text', [
+          animate('250ms', style({
+            opacity: 1
+            }))
+          ]),
+          query('.comment-date', [
+            animate('500ms', style({
+              opacity: 1
+            }))
+          ])
+        ])
       ])
     ])
   ]
