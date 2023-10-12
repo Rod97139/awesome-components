@@ -28,7 +28,13 @@ export class ComplexFormComponent implements OnInit {
   }
 
   private initMainForm(): void {
-    this.mainForm = this.formBuilder.group({});
+    this.mainForm = this.formBuilder.group({
+      personalInfo: this.personalInfoForm,
+      contactPreference: this.contactPreferenceCtrl,
+      email: this.emailForm,
+      phone: this.phoneCtrl,
+      loginInfo: this.loginInfoForm
+    });
   }
 
   private initFormsControls():void {
