@@ -53,6 +53,7 @@ export class ComplexFormComponent implements OnInit {
   }
 
   onSubmitForm() {
+    console.log(this.mainForm.value);
 
   }
 }
