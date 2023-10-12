@@ -210,6 +210,24 @@
         "confirmPassword": "resetForm"
       },
       "id": 5
+    },
+    {
+      "personalInfo": {
+        "firstName": "Rodolphe",
+        "lastName": "Mingo"
+      },
+      "contactPreference": "email",
+      "email": {
+        "email": "fayaflame@gmail.com",
+        "confirm": "fayaflame@gmail.com"
+      },
+      "phone": "",
+      "loginInfo": {
+        "username": "tett",
+        "password": "aerttyu2124",
+        "confirmPassword": "aerttyu2124"
+      },
+      "id": 6
     }
   ],
   "candidates": [
