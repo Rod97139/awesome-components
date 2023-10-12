@@ -13,10 +13,16 @@ export class ComplexFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-
+    this.initMainForm();
   }
 
   initMainForm(): void {
     this.mainForm = this.formBuilder.group({  });
+  }
+
+  protected readonly onsubmit = onsubmit;
+
+  onSubmitForm() {
+
   }
 }
