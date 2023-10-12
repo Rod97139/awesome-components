@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {map, Observable, startWith, tap} from "rxjs";
 import {ComplexFormService} from "../../services/complex-form.service";
+import {validValidator} from "../../validators/valid.validator";
 
 @Component({
   selector: 'app-complex-form',
@@ -86,13 +87,14 @@ export class ComplexFormComponent implements OnInit {
     } else if (ctrl.hasError('email')) {
       return 'Ce champ doit contenir une adresse email valide';
     } else if (ctrl.hasError('minlength')) {
-          return 'Ce numéro de téléphone ne contient pas assez de chiffres';
-   } else if (ctrl.hasError('maxlength')) {
-            return 'Ce numéro de téléphone contient trop de chiffres';
-
+      return 'Ce numéro de téléphone ne contient pas assez de chiffres';
+    } else if (ctrl.hasError('maxlength')) {
+      return 'Ce numéro de téléphone contient trop de chiffres';
+    } else if (ctrl.hasError('validValidator')) {
+      return 'Cette adresse ne correspond pas à la valeur attendue';
     } else {
         return 'Ce champ contient une erreur';
-      }
+    }
   }
 
   private initFormObservables() {
@@ -110,7 +112,7 @@ export class ComplexFormComponent implements OnInit {
 
   private setEmailValidators(showEmailCtrl: boolean) {
     if (showEmailCtrl) {
-      this.emailCtrl.addValidators([Validators.required, Validators.email]);
+      this.emailCtrl.addValidators([Validators.required, validValidator()]);
       this.confirmEmailCtrl.addValidators([Validators.required, Validators.email]);
     } else {
       this.emailCtrl.clearValidators();
