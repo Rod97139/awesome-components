@@ -30,7 +30,6 @@ export class CandidateListComponent implements OnInit{
     this.initForm();
     this.initObservables();
     this.candidateService.getCandidatesFromServer();
-
   }
 
   private initForm() {
@@ -42,7 +41,6 @@ export class CandidateListComponent implements OnInit{
       {value: CandidateSearchType.COMPANY, label: 'Entreprise'},
     ];
   }
-
 
   private initObservables(): void {
     this.loading$ = this.candidateService.loading$;
@@ -61,9 +59,6 @@ export class CandidateListComponent implements OnInit{
       map(([search, searchType, candidates]) => candidates.filter(candidate => candidate[searchType]
         .toLowerCase()
         .includes(search as string)))
-
-
     );
   }
-
 }
