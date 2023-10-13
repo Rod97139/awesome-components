@@ -174,60 +174,6 @@
         "confirmPassword": "test"
       },
       "id": 3
-    },
-    {
-      "personalInfo": {
-        "firstName": "tasdg",
-        "lastName": "dfgsqdf"
-      },
-      "contactPreference": "email",
-      "email": {
-        "email": "test@test",
-        "confirm": "test@test"
-      },
-      "phone": "",
-      "loginInfo": {
-        "username": "moihds",
-        "password": "moihsdg",
-        "confirmPassword": "moihsdgf"
-      },
-      "id": 4
-    },
-    {
-      "personalInfo": {
-        "firstName": "Rodolphe",
-        "lastName": "Mingo"
-      },
-      "contactPreference": "email",
-      "email": {
-        "email": "fayaflame@gmail.com",
-        "confirm": "fayaflame@gmail.com"
-      },
-      "phone": "",
-      "loginInfo": {
-        "username": "test",
-        "password": "azertyui",
-        "confirmPassword": "resetForm"
-      },
-      "id": 5
-    },
-    {
-      "personalInfo": {
-        "firstName": "Rodolphe",
-        "lastName": "Mingo"
-      },
-      "contactPreference": "email",
-      "email": {
-        "email": "fayaflame@gmail.com",
-        "confirm": "fayaflame@gmail.com"
-      },
-      "phone": "",
-      "loginInfo": {
-        "username": "tett",
-        "password": "aerttyu2124",
-        "confirmPassword": "aerttyu2124"
-      },
-      "id": 6
     }
   ],
   "candidates": [
