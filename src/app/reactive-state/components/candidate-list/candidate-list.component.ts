@@ -1,4 +1,6 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+import {CandidatesService} from "../../services/candidates.service";
 
 @Component({
   selector: 'app-candidate-list',
@@ -8,12 +10,12 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} fr
 })
 export class CandidateListComponent implements OnInit{
 
-  constructor() {
-  }
+  loading$!: Observable<boolean>;
 
-  @Input() obj!: { firstName: string, lastName: string };
+  constructor(private candidateService: CandidatesService) {}
 
   ngOnInit(): void {
+    this.loading$ = this.candidateService.loading$;
   }
 
 }
